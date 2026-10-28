@@ -1,0 +1,28 @@
+{
+  "name": "easy-exam",
+  "version": "0.4.4",
+  "private": true,
+  "description": "Account-free Windows screenshot companion for a native Android written-exercise client",
+  "main": "src/main.cjs",
+  "scripts": {
+    "postinstall": "node scripts/install-electron.cjs",
+    "start": "electron .",
+    "build:native": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-native.ps1",
+    "build:tray": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-tray-icon.ps1",
+    "test": "node --test test/*.test.cjs",
+    "test:native": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/test-native.ps1",
+    "check": "node scripts/check.cjs",
+    "pack": "node scripts/package.cjs",
+    "smoke": "electron . --smoke-test"
+  },
+  "dependencies": {
+    "qrcode": "1.5.4",
+    "secure-remote-password": "0.3.1",
+    "selfsigned": "5.5.0",
+    "ws": "8.22.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "44.9.0"
+  }
+}

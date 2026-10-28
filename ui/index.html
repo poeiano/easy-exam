@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'"><title>easy exam · 电脑副端</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="shell">
+<header class="topbar"><div class="brand"><span class="brand-icon" aria-hidden="true">e</span><div>easy <b>exam</b><small>你的双端笔试工作台</small></div></div><div class="topbar-actions"><span class="local-badge"><span class="dot"></span>本机直连</span><button id="hide" class="secondary">收起到托盘 ↗</button></div></header>
+<section class="page-heading"><div><div class="eyebrow">SCREENSHOT WORKSPACE</div><h1>截图工作台</h1><p>电脑捕获题目，手机保存记录与解答。</p></div><div class="shortcut-preview"><span>普通截图</span><kbd id="shortcut-display">Alt + S</kbd></div></section>
+<div id="error" role="alert" hidden></div>
+<section class="status-strip" aria-label="连接服务状态"><div class="status-copy"><span id="service-dot" class="dot off"></span><strong id="service-state">服务未启动</strong><span id="peer-count" class="status-pill">0 台设备</span></div><button id="toggle-service" class="secondary">启动连接服务</button></section>
+<div class="workspace-grid">
+<section class="card pairing"><div class="card-title"><div><span class="eyebrow">CONNECT</span><h2>连接手机或平板</h2></div><button id="direct-rotate" class="text-button">刷新二维码</button></div><p class="muted card-intro">打开手机端，扫描下方二维码。</p>
+<div class="qr-container"><img id="direct-qr" alt="手机端连接二维码" hidden><div id="direct-empty">启动服务后显示二维码</div></div><div class="pair-meta"><span id="direct-expiry"></span><span class="small muted">仅首次配对使用</span></div>
+<div id="connection-controls"><label for="direct-address">电脑连接地址</label><select id="direct-address"></select><button id="direct-copy" class="secondary full-width">复制配对链接</button></div><p id="connection-hint" class="helper-note">扫码不便时可粘贴链接连接。配对成功后长期保存，断网自动重连。</p><div class="connection-guide"><div><span>01</span>手机新建或继续笔试记录</div><div><span>02</span>按截图快捷键，发送题目</div><div><span>03</span>手机查看题图、解答与追问</div></div></section>
+<section class="card capture-card"><div class="card-title"><div><span class="eyebrow">CAPTURE</span><h2>截图与发送</h2></div><span class="subtle-badge">双键快捷操作</span></div>
+<div class="field-group"><label for="screen">截图显示器</label><select id="screen"></select></div>
+<div class="form-row"><div class="field-group"><label for="width">图像宽度</label><select id="width"><option value="1280">1280 px · 流畅</option><option value="1920" selected>1920 px · 推荐</option><option value="2560">2560 px · 清晰</option><option value="3840">3840 px · 超清</option></select></div><div class="field-group"><label for="quality">画面质量</label><select id="quality"><option value="70">70% · 小体积</option><option value="85" selected>85% · 均衡</option><option value="95">95% · 高画质</option></select></div></div>
+<div class="field-group"><label for="hotkey">普通截图快捷键</label><select id="hotkey"><option value="Alt+S">Alt + S</option><option value="Alt+Q">Alt + Q</option><option value="Alt+X">Alt + X</option><option value="Control+Q">Ctrl + Q</option></select><div class="hotkey-state" id="hotkey-state" role="status">启动服务后注册快捷键</div></div>
+<div class="long-capture-control"><div><strong>滚动长截屏 · 双击 Ctrl</strong><p>快速按下并松开 Ctrl 两次开始，手动缓慢向下滚动，再次双击完成并发送。</p><div id="long-capture-state" role="status" aria-live="polite">正在检查快捷键…</div></div><div class="long-capture-actions"><button id="long-capture" class="secondary">开始长截屏</button><button id="cancel-long-capture" class="text-button danger-text" hidden>取消</button></div></div>
+<label class="pause-control" for="paused"><span><strong>暂停截图</strong><small>暂时停止响应截图指令</small></span><input id="paused" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label>
+<div class="capture-bottom"><div class="actions"><span id="save-feedback" role="status"></span><button id="save" class="secondary">保存设置</button><button id="capture" class="primary">截图并发送 →</button></div><div class="quiet-note"><span aria-hidden="true">✓</span>截图不弹窗、不切换焦点。模型配置与笔试记录在手机端管理。</div></div></section></div>
+<section class="card peers"><div class="card-title"><div class="section-heading"><h2>已连接设备</h2><span id="shots" class="subtle-badge">0 次发送</span></div><button id="forget-devices" class="text-button danger-text">取消所有设备信任</button></div><div id="peers" class="empty">暂无连接，请使用手机扫描电脑二维码。</div><div id="last-shot" class="small muted"></div></section>
+<details class="card logs"><summary><span>运行记录</span><span class="small muted">仅记录操作状态，不记录截图内容</span></summary><div id="logs">等待启动服务…</div></details>
+<footer><span>easy exam <span id="version"></span></span><span>关闭窗口后驻留托盘 · 托盘菜单可完全退出</span></footer>
+</main><script src="app.js"></script></body></html>
+
+

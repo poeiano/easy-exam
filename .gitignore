@@ -1,0 +1,38 @@
+node_modules/
+release/
+smoke-*.png
+smoke-result.json
+*.log
+.toolchain/
+android/.gradle/
+android/**/build/
+android/local.properties
+bin/
+.private/
+
+# Credentials, signing keys and per-user connection state
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+screenshot-settings.json
+trusted-devices.json
+tls-identity.json
+
+# Installers belong in Releases, after checking that they contain no private keys
+*.apk
+*.aab
+*.exe
+*.dll
+*.zip
+*.7z
+
+# Local reconstruction notes, historical logs and screenshots
+docs/*
+!docs/DESKTOP-LONG-CAPTURE-0.4.3.md
+!docs/PUBLISHING.md

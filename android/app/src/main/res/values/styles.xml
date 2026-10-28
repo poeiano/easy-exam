@@ -1,0 +1,16 @@
+<resources>
+    <style name="OfferInTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#315EE9</item>
+        <item name="android:colorControlActivated">#315EE9</item>
+        <item name="android:colorControlNormal">#65758B</item>
+        <item name="android:alertDialogTheme">@style/OfferInDialogTheme</item>
+    </style>
+    <style name="OfferInDialogTheme" parent="android:style/Theme.Material.Light.Dialog.Alert">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#315EE9</item>
+        <item name="android:textColorPrimary">#1C2D45</item>
+        <item name="android:textColorSecondary">#65758B</item>
+        <item name="android:backgroundDimAmount">0.32</item>
+    </style>
+</resources>
